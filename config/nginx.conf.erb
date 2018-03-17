@@ -15,10 +15,6 @@ http {
 
 	server_tokens off;
 
-	<!--log_format l2met 'measure#nginx.service=$request_time request_id=$http_x_request_id';-->
-	<!--access_log logs/nginx/access.log l2met;-->
-
-	<!-- See details here https://gist.github.com/simonw/1e0fdf2e9b8744b39bd7 -->
 	log_format custom 'measure#nginx.service=$request_time request="$request" '
 										'status_code=$status request_id=$http_x_request_id '
 										'remote_addr="$remote_addr" forwarded_for="$http_x_forwarded_for" '
